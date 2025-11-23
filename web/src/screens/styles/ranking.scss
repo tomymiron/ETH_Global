@@ -1,0 +1,133 @@
+@use "../../theme.scss" as theme;
+
+body, html {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#Ranking {
+  background-color: theme.$white_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100vh;
+  padding: 32px 0;
+  display: flex;
+  width: 100vw;
+  top: 0;
+  
+  nav {
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    left: 18px;
+    top: 18px;
+
+    #backButton {
+      background-color: theme.$purple_01;
+      justify-content: center;
+      border-radius: 24px;
+      align-items: center;
+      display: flex;
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  main {
+    flex-direction: column;
+    padding: 32px 12px;
+    overflow-x: hidden;
+    max-width: 580px;
+    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex: 1;
+
+    section {
+      flex-direction: column;
+      position: relative;
+      margin-top: 24px;
+      display: flex;
+      flex: 1;
+
+      h1 {
+        line-height: theme.$f0;
+        color: theme.$black_01;
+        font-size: theme.$f0;
+        margin: 0 0 8px;
+        font-weight: 600;
+
+        b {
+          font-weight: 900;
+        }
+      }
+
+      #statusMessage {
+        font-size: theme.$f5;
+        font-weight: 400;
+        margin: 0 0 6px;
+      }
+
+      input {
+        border: 1px solid theme.$black_01;
+        background-color: transparent;
+        border-radius: 8px;
+        margin: 0 0 4px;
+        padding: 0 12px;
+        outline: none;
+        height: 48px;
+        width: 100%;
+
+        color: theme.$black_01;
+        font-size: theme.$f5;
+        font-weight: 700;
+
+        &::placeholder {
+          color: theme.$white_02;
+          font-weight: 400;
+        }
+      }
+
+      #customLinkContainer {
+        flex-direction: row;
+        display: flex;
+        gap: 4px;
+
+        #customLinkTitle {
+          text-align: center;
+          width: 92px;
+          padding: 0 8px;
+        }
+      }
+
+      #updateButton {
+        box-shadow: -4px 4px 12px 0 rgba(0, 0, 0, 0.25);
+        background-color: theme.$black_01;
+        justify-content: center;
+        border-radius: 12px;
+        align-items: center;
+        margin-top: 32px;
+        height: 72px;
+        display: flex;
+        width: 100%;
+
+        p {
+          color: theme.$white_01;
+          font-size: theme.$f3;
+          font-weight: 900;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

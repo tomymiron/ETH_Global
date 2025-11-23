@@ -1,0 +1,145 @@
+@use "../../theme.scss" as theme;
+
+#Privacy,
+#Terms {
+  background-color: theme.$white_01;
+  color: theme.$black_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100vh;
+  display: flex;
+  width: 100vw;
+  bottom: 0;
+  top: 0;
+
+  nav {
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+    background-color: theme.$white_01;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    padding: 18px 24px;
+    display: flex;
+    width: 100%;
+    gap: 18px;
+
+    #subPreviateContaienr {
+      align-items: center;
+      flex-direction: row;
+      display: flex;
+      gap: 8px;
+
+      #previateContainer {
+        background-color: theme.$black_02;
+        justify-content: center;
+        border-radius: 12px;
+        align-items: center;
+        display: flex;
+        height: 48px;
+        width: 48px;
+      }
+
+      h2 {
+        color: theme.$black_01;
+        font-size: theme.$f4;
+        text-align: start;
+        font-weight: 900;
+        margin: 0;
+      }
+
+    }
+  }
+
+  main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex-direction: column;
+    overflow-x: hidden;
+    max-width: 580px;
+    overflow-y: auto;
+    padding: 0 18px;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    section {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      flex-direction: column;
+      position: relative;
+      overflow-y: auto;
+      display: flex;
+      flex: 1;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h1 {
+        line-height: theme.$f0 + 4px;
+        color: theme.$black_01;
+        font-size: theme.$f0;
+        font-weight: 900;
+        margin: 48px 0 0;
+      }
+
+      .subtitle {
+        color: theme.$white_02;
+        font-size: theme.$f5;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+
+      p {
+        color: theme.$black_01;
+        font-size: theme.$f4;
+        font-weight: 400;
+        margin-top: 6px;
+      }
+
+      h2 {
+        color: theme.$black_01;
+        font-size: theme.$f2;
+        margin-bottom: 7px;
+        font-weight: 800;
+        margin-top: 32px;
+      }
+
+      ul {
+        padding-left: 18px;
+        list-style: disc;
+        margin-top: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      li {
+        color: theme.$black_01;
+      }
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        color: theme.$green_01;
+      }
+
+      a:visited {
+        color: theme.$green_01;
+      }
+
+      strong,
+      b {
+        color: theme.$black_01;
+        font-weight: 600;
+      }
+    }
+  }
+}

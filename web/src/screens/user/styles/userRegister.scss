@@ -1,0 +1,204 @@
+@use "../../../theme.scss" as theme;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body, html {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#UserRegister {
+  background-color: theme.$white_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100%;
+  padding: 32px;
+  display: flex;
+  width: 100vw;
+  top: 0;
+  
+  nav {
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    display: flex;
+    left: 24px;
+    top: 18px;
+    gap: 8px;
+
+    #previateContainer {
+      background-color: theme.$black_01;
+      justify-content: center;
+      border-radius: 12px;
+      align-items: center;
+      display: flex;
+      height: 48px;
+      width: 48px;
+    }
+
+    h2 {
+      color: theme.$black_01;
+      font-size: theme.$f4;
+      text-align: start;
+      font-weight: 900;
+      margin: 0;
+    }
+  }
+
+  main {
+    flex-direction: column;
+    padding-bottom: 100px;
+    padding-top: 32px;
+    overflow-x: hidden;
+    max-width: 580px;
+    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex: 1;
+
+    section {
+      flex-direction: column;
+      position: relative;
+      margin-top: 24px;
+      display: flex;
+      flex: 1;
+
+      &.noIcon {
+        justify-content: center;
+      }
+
+      &.loadingSection {
+        justify-content: flex-start;
+        min-height: 80vh;
+        flex: 1;
+
+        #loadingContainer {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          width: 100%;
+          flex: 1;
+
+          .loadingSpinner {
+            animation: spin 1s linear infinite;
+            border: 4px solid theme.$gray_01;
+            border-top: 4px solid theme.$black_01;
+            border-radius: 24px;
+            height: 48px;
+            width: 48px;
+          }
+        }
+
+        h1 {
+          color: theme.$black_01;
+          font-size: theme.$f0;
+          font-weight: 900;
+        }
+
+        .subTitle {
+          color: theme.$gray_01;
+          font-size: theme.$f4;
+          font-weight: 400;
+          margin: 4px 0 0;
+        }
+      }
+
+      #worldContainer {
+        transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.4,0,0.2,1), margin 0.2s cubic-bezier(0.4,0,0.2,1);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 100%;
+      }
+
+      h1 {
+        color: theme.$black_01;
+        font-size: theme.$f0;
+        font-weight: 600;
+        margin: 24px 0 0;
+
+        b {
+          font-weight: 900;
+        }
+      }
+
+      .subTitle {
+        color: theme.$gray_01;
+        font-size: theme.$f4;
+        line-height: 20px;
+        font-weight: 400;
+        margin: 12px 0 0;
+      }
+
+      #continueButton {
+        box-shadow: -6px 6px 10px 0 rgba(21, 10, 38, 0.25);
+        background-color: theme.$black_01;
+        justify-content: center;
+        border-radius: 12px;
+        align-items: center;
+        display: flex;
+        height: 72px;
+        width: 100%;
+
+        transform: translateX(-50%);
+        width: calc(100% - 64px);
+        max-width: 580px;
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+
+        p {
+          color: theme.$white_01;
+          font-size: theme.$f1;
+          font-weight: 900;
+          margin: 0;
+        }
+      }
+    }
+
+    @media (max-height: 700px) {
+      section {
+        #worldContainer {
+          transform: scale(0.85) translateY(-24px);
+          margin-bottom: -42px;
+        }
+
+        h1 {
+          font-size: theme.$f1 + 8px;
+        }
+
+        .subTitle {
+          font-size: theme.$f4;
+        }
+
+        #continueButton {
+          height: 64px;
+          bottom: 24px;
+
+          p {
+            font-size: theme.$f3;
+          }
+        }
+      }
+    }
+    @media (max-height: 600px) {
+      section {
+        #worldContainer {
+          transform: scale(0.7);
+          margin-bottom: -32px;
+          margin-top: -48px;
+        }
+      }
+    }
+  }
+}

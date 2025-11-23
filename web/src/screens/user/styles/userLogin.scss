@@ -1,0 +1,140 @@
+@use "../../../theme.scss" as theme;
+
+#UserLogin {
+  background-color: theme.$white_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  position: absolute;
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  padding: 0;
+  top: 0;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  main {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 32px;
+    max-width: 500px;
+    padding: 0 32px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    #previateIcon {
+      background-color: theme.$black_01;
+      justify-content: center;
+      border-radius: 12px;
+      align-items: center;
+      display: flex;
+      height: 64px;
+      width: 64px;
+    }
+
+    h1 {
+      color: theme.$black_01;
+      font-size: theme.$f3;
+      margin: 18px 0 6px;
+      font-weight: 700;
+    }
+    #description {
+      color: theme.$black_01;
+      line-height: theme.$f4;
+      font-size: theme.$f5;
+      font-weight: 300;
+      margin: 0 0 12px;
+    }
+
+    input {
+      background-color: theme.$white_01;
+      border: 1px solid theme.$black_01;
+      color: theme.$black_01;
+      font-size: theme.$f5;
+      border-radius: 8px;
+      font-weight: 400;
+      padding: 0 12px;
+      outline: none;
+      margin-bottom: 4px;
+      height: 48px;
+      width: 100%;
+    }::placeholder {
+      color: theme.$white_02;
+      font-weight: 400;
+    }
+
+    #loginBtn {
+      background-color: theme.$purple_01;
+      justify-content: center;
+      border-radius: 12px;
+      align-items: center;
+      margin-top: 8px;
+      display: flex;
+      height: 72px;
+      width: 100%;
+
+      p {
+        color: theme.$white_01;
+        font-size: theme.$f3;
+        font-weight: 900;
+      }
+    }
+
+    #separatorContainer {
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 18px;
+      display: flex;
+      width: 100%;
+      gap: 12px;
+
+      div {
+        background-color: theme.$black_01;
+        border-radius: 1px;
+        height: 2px;
+        flex: 1;
+      }
+
+      p {
+        font-size: theme.$f6 + 1px;
+        color: theme.$black_01;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+
+    #requestButton {
+      border: 2px solid theme.$black_01;
+      background-color: transparent;
+      justify-content: center;
+      border-radius: 12px;
+      align-items: center;
+      margin-top: 12px;
+      outline: none;
+      display: flex;
+      height: 64px;
+      width: 100%;
+
+      p {
+        color: theme.$black_01;
+        font-size: theme.$f4;
+        font-weight: 500;
+      }
+    }
+
+    #problemsButton {
+      text-decoration-line: underline;
+      background-color: transparent;
+      color: theme.$black_02;
+      font-size: theme.$f5;
+      margin: 12px 0 0;
+      font-weight: 500;
+      padding: 0;
+    }
+  }
+}

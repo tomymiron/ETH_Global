@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Reset Password!</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #150a26;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      #mainContainer {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #1f1035;
+        border-radius: 20px;
+        padding: 28px 0;
+      }
+      #logoImgSection {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      #logoImgContainer {
+        padding: 24px;
+        border-radius: 999px;
+        margin: 0 auto;
+        background-color: #150a26;
+        display: inline-block;
+      }
+      #logoImg {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        display: inline-block;
+        text-align: center;
+        line-height: 100px;
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      #separator {
+        width: calc(100% - 32px);
+        margin: 16px auto;
+        padding: 6px 0;
+        background-color: #976cf6;
+        border-radius: 8px;
+        text-align: center;
+      }
+      #separatorIcon {
+        width: 64px;
+        height: 64px;
+        display: inline-block;
+        padding: 16px;
+        background-color: #150a26;
+        border-radius: 50%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 16px;
+        color: #976cf6;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      #innerContainer {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #eef0fa;
+        margin: 0;
+        margin-bottom: 12px;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .info {
+        font-size: 18px;
+        color: #eef0fa;
+        margin: 0;
+        line-height: 1.4;
+      }
+      #button {
+        background-color: #976cf6;
+        color: #0f1113;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 12px 40px;
+        margin: 15px auto;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+      #buttonText {
+        color: #150a26;
+        padding: 0;
+        margin: 0;
+      }
+      #lineSeparator {
+        width: 100%;
+        height: 3px;
+        background-color: #150a26;
+        border-radius: 3px;
+        margin-top: 18px;
+      }
+      #socialContainer {
+        margin-top: 20px;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .socialItem {
+        display: inline-block;
+        padding: 20px;
+        background-color: #150a26;
+        border-radius: 999px;
+        margin: 0 6px;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: top;
+        border: 2px solid #976cf6;
+      }
+      .socialItem img {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .socialItem.emoji {
+        line-height: 60px;
+        color: #976cf6;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 300;
+        color: #eef0fa;
+        margin: 28px 0;
+        text-align: center;
+      }
+      #footer {
+        font-size: 14px;
+        font-weight: 300;
+        color: #eef0fa;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        padding: 0 20px;
+      }
+      #footer > a {
+        color: #eef0fa;
+        text-decoration: none;
+      }
+      #footer > a:hover {
+        text-decoration: underline;
+      }
+      #dataContainer {
+        background-color: #150a26;
+        padding: 16px;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+      #code {
+        color: #976cf6;
+        font-size: 48px;
+        text-align: center;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        letter-spacing: 4px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainContainer">
+      <div id="logoImgSection">
+        <div id="logoImgContainer">
+          <img id="logoImg" src="https://api.previateesta.com/image/email/berenjena.png" alt="P" width="64" height="64" />
+        </div>
+      </div>
+      <div id="separator">
+        <img id="separatorIcon" src="https://api.previateesta.com/image/email/mail.png" alt="✉️" width="32" height="32" />
+      </div>
+      <div id="innerContainer">
+        <h1>Reset Password!</h1>
+        <div id="dataContainer">
+          <p class="info">Hello!<br />You requested a password reset. To continue, please enter the following code.</p>
+        </div>
+        <h1 style="margin-top: 10px">Your verification code:</h1>
+        <h3 id="code">{recipientName}</h3>
+        <div id="lineSeparator"></div>
+        <div id="dataContainer" style="margin-top: 10px">
+          <p class="info">If you didn't request a password reset, please ignore this email.</p>
+        </div>
+      </div>
+      <div id="socialContainer">
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/previateesta/" class="socialItem" target="_blank">
+          <img src="https://api.previateesta.com/image/email/instagram.png" alt="Instagram" width="32" height="32" />
+        </a>
+
+        <!-- TIKTOK -->
+        <a href="https://www.tiktok.com/@previateesta?lang=en" class="socialItem" target="_blank">
+          <img src="https://api.previateesta.com/image/email/tiktok.png" alt="TikTok" width="32" height="32" />
+        </a>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/p/Previate-Esta-100063497767281/" class="socialItem" target="_blank">
+          <img src="https://api.previateesta.com/image/email/facebook.png" alt="Facebook" width="32" height="32" />
+        </a>
+
+        <!-- YOUTUBE -->
+        <a href="https://www.youtube.com/@previateesta" class="socialItem" target="_blank">
+          <img src="https://api.previateesta.com/image/email/youtube.png" alt="YouTube" width="32" height="32" />
+        </a>
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/5491134808000?text=Hola Previate 🤠" class="socialItem" target="_blank">
+          <img src="https://api.previateesta.com/image/email/whatsapp.png" alt="WhatsApp" width="32" height="32" />
+        </a>
+      </div>
+      <h2>Previate This</h2>
+      <p id="footer">
+        | <a href="https://previateesta.com/privacy" target="_blank">Privacy Policy</a> | <a href="https://previateesta.com/terms" target="_blank">Terms of Service</a> |
+      </p>
+    </div>
+  </body>
+</html>

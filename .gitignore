@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# API specific
+api/images/
+api/uploads/
+api/temp/
+
+# Web specific
+web/dist/
+web/.vite/
+
+# Package locks (opcional - algunos prefieren incluirlos)
+# Descomenta la siguiente línea si NO quieres subir los package-lock.json
+# package-lock.json
+# **/package-lock.json
+
+# PM2
+.pm2/
+ecosystem.config.js
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+.temp/
+tmp/
+*.pid
+*.seed
+*.pid.lock
+

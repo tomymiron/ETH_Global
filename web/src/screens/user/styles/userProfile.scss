@@ -1,0 +1,318 @@
+@use "../../../theme.scss" as theme;
+
+body, html {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#UserProfile {
+  background-color: theme.$white_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100vh;
+  padding: 32px 0;
+  display: flex;
+  width: 100vw;
+  top: 0;
+  
+  nav {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    right: 18px;
+    left: 18px;
+    top: 18px;
+
+    #backButton {
+      background-color: theme.$purple_01;
+      justify-content: center;
+      border-radius: 24px;
+      align-items: center;
+      display: flex;
+      height: 48px;
+      width: 48px;
+    }
+
+    #logoutButton {
+      background-color: theme.$red_01;
+      padding: 4px 24px 4px 4px;
+      justify-content: center;
+      border-radius: 24px;
+      align-items: center;
+      display: flex;
+      height: 48px;
+      gap: 8px;
+
+      #logoutButtonIcon {
+        background-color: theme.$white_01;
+        justify-content: center;
+        border-radius: 40px;
+        align-items: center;
+        display: flex;
+        height: 40px;
+        width: 40px;
+      }
+
+      p {
+        color: theme.$white_01;
+        line-height: theme.$f5;
+        font-size: theme.$f5;
+        font-weight: 900;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+
+  main {
+    flex-direction: column;
+    padding: 32px 12px;
+    overflow-x: hidden;
+    max-width: 580px;
+    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex: 1;
+
+    section {
+      flex-direction: column;
+      position: relative;
+      margin-top: 24px;
+      display: flex;
+      flex: 1;
+
+      #statusMessage {
+        font-size: theme.$f6;
+        font-weight: 400;
+        margin: 4px 0 0;
+      }
+
+      h1 {
+        line-height: theme.$f0;
+        color: theme.$black_01;
+        font-size: theme.$f0;
+        font-weight: 600;
+        margin: 0;
+
+        b {
+          font-weight: 900;
+        }
+      }
+
+      input {
+        border: 1px solid theme.$black_01;
+        background-color: transparent;
+        border-radius: 8px;
+        padding: 0 12px;
+        outline: none;
+        height: 48px;
+        width: 100%;
+        margin: 0;
+
+        color: theme.$black_01;
+        font-size: theme.$f5;
+        font-weight: 700;
+
+        &::placeholder {
+          color: theme.$white_02;
+          font-weight: 400;
+        }
+      }
+
+      #formHeaderContainer {
+        flex-direction: row;
+        margin-top: 4px;
+        display: flex;
+        gap: 4px;
+
+        #imageContainer {
+          transition: transform 0.2s ease;
+          border-radius: 18px;
+          position: relative;
+          cursor: pointer;
+          display: flex;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          img {
+            border-radius: 18px;
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+          }
+
+          #imageOverlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.2s ease;
+            justify-content: center;
+            border-radius: 18px;
+            align-items: center;
+            position: absolute;
+            display: flex;
+            opacity: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+
+        #formHeaderInputContainer {
+          flex-direction: column;
+          display: flex;
+          width: 100%;
+          gap: 4px;
+        }
+      }
+
+      #formBodyContainer {
+        flex-direction: column;
+        margin-top: 8px;
+        display: flex;
+        width: 100%;
+        gap: 4px;
+      }
+
+      #locationContainer {
+        margin-top: 6px;
+        flex: 1;
+
+        h2 {
+          margin: 18px 0 4px 2px;
+          color: theme.$black_01;
+          font-size: theme.$f5;
+          font-weight: 700;
+        }
+
+        #locationSelectedContainer {
+          border: 1px solid theme.$black_01;
+          flex-direction: column;
+          border-radius: 12px;
+          padding: 12px;
+          display: flex;
+          gap: 8px; 
+
+          a {
+            background-color: theme.$black_01;
+            justify-content: center;
+            color: theme.$white_01;
+            font-size: theme.$f5;
+            align-items: center;
+            border-radius: 6px;
+            width: max-content;
+            padding: 8px 12px;
+            font-weight: 900;
+            display: flex;
+            margin: 0;
+          }
+
+          p {
+            font-size: theme.$f5 + 2px;
+            color: theme.$black_01;
+            font-weight: 400;
+            margin-left: 2px;
+          }
+          
+        }
+      }
+
+      #formFooterContainer {
+        border: 1px solid theme.$black_01;
+        flex-direction: column;
+        border-radius: 12px;
+        margin-top: 12px;
+        padding: 12px;
+        display: flex;
+        gap: 4px;
+
+        #formFooterTitle {
+          background-color: theme.$black_01;
+          color: theme.$white_01;
+          font-size: theme.$f5;
+          width: max-content;
+          border-radius: 6px;
+          padding: 8px 12px;
+          font-weight: 900;
+          margin: 0;
+        }
+
+        #formFooterDescription {
+          color: theme.$gray_01;
+          font-size: theme.$f5;
+          margin: 4px 0 0;
+          font-weight: 400;
+        }
+      }
+
+      #updateButton {
+        box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.25);
+        background-color: theme.$black_01;
+        justify-content: center;
+        border-radius: 12px;
+        align-items: center;
+        margin-top: 32px;
+        height: 72px;
+        display: flex;
+        width: 100%;
+
+        p {
+          color: theme.$white_01;
+          font-size: theme.$f3;
+          font-weight: 900;
+          margin: 0;
+        }
+      }
+
+      .inputWithStatus {
+        align-items: center;
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        input {
+          &.invalid {
+            border-color: theme.$red_01;
+          }
+        }
+
+        .inputStatus {
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          display: flex;
+          right: 12px;
+        }
+      }
+
+      .loading-spinner {
+        border-top: 2px solid theme.$white_01;
+        animation: spin 1s linear infinite;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    }
+  }
+}

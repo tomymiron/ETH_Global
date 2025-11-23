@@ -1,20 +1,14 @@
 //# -- API END POINTS ROUTES -- //
+import eventsRoutes from "./routes/events.js";
 import authRoutes from "./routes/auth.js";
 
 //# -- IMPORTS -- //
-import { fileURLToPath } from "url";
 import express from "express";
 import dotenv from "dotenv";
-import sharp from "sharp";
 import cors from "cors";
-import path from "path";
 
 dotenv.config();
 const app = express();
-
-//# -- DIRECTORY ROUTE -- //
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 //# -- Middlewares -- //
 app.use(express.json({
@@ -44,17 +38,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //# -- Main Routes -- //
+app.use("/events", eventsRoutes);
 app.use("/auth", authRoutes);
-
-//# -- Image Routes -- //
-app.get('/image/profile/:name', (req, res) => {
-  const imagePath = `./images/profile_images/${req.params.name}`;
-  sharp(imagePath)
-    .resize(360, 360)
-    .toBuffer()
-    .then((data) => { res.writeHead(200, { 'Content-Type': 'image/jpeg' }); res.end(data) })
-    .catch((error) => { res.status(500).send('Error al procesar la imagen') });
-});
 
 app.use("/", (req, res) => {
   res.status(200).send("<h1>Welcome to the NEW PREVIATE API</h1>");

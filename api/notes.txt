@@ -1,0 +1,41 @@
+-- historia
+  - metricas de la app
+  - app de produccion
+  - comienzos - evolucion
+  - berenjena, si, esto es una berenjena
+  - es algo que ya esta funcionando
+
+-- como llegamos aca
+ - no entendemos nada de web 3
+ - estuvimos hablando con todo el mundo 
+ - agradecimientos a todos los que nos ayudaron, mencionas personas...
+
+-- dimos un paso en web 3
+ - 
+
+-- Problemas que vimos
+ - altos costos de servicios, todas las ticketeras cobrana aprox 15%
+ - ofrecemos 
+  - Pasarela de pago mercado pago
+  - Pay with crypto
+ - falta de verificacion de los usuarios ( implementamos self para asegurarnos su edad )
+ - creacion de nuestra propia token ( eggplant 🍆 ) 
+
+-- Solucion que aplicamos
+ - Pagar con crypto, usuarios van a querer migrar solo a pagar en crypto mayormente por 
+pagar menos, nadie quiere pagar de mas. 
+
+- Implementacion de YELLOW, existen usuarios clientes y usuarios organizadores, estos ultimos
+pueden crear eventos, los organizadores pueden optar que pagos aceptar, en caso de habilitar
+crypto, usuarios clientes pagan en usdt contentos porque la tarifa de servicio es infima. 
+Luego mediante webhook a la api, nosotros podemos obtener los successfull payments, donde 
+determinaremos las entradas para el usuario que compro, almacenando un registro de ello y 
+del payment en si. Pasada la fecha del evento se les paga a los productores mediante monedas
+corrientes las cuales son friendly para los usuarios productores.
+
+- Implementacion SELF, usuarios pueden autenticarse con su DNI para poder darles una
+insignia de verfiicado lo cual asegura que ese usuario es real y sus datos estan validados.
+
+-- Implementacion CURVEGRID, creacion de tokens ( eggplant 🍆 ) canjeables para enviar mensajes
+dar super lkes en seccion de tinder de previas, acceder a descuentos para fiestas, moneda de
+cambio dentro de la app, etc...

@@ -89,12 +89,15 @@ export const getEvents = async (req, res) => {
 
     const procedureParams = [date_cursor, priority_cursor, id_cursor, startDate, endDate, isFree, isLatest, centerLat, centerLng, radius, genreIds, tagIds, minAge, maxAge];
 
+    console.log(procedureParams);
     if (!token) {
       data = await queryDatabase("call a_events_filtered_get(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", procedureParams);
     } else {
       const userInfo = await verifyUser(token);
       data = await queryDatabase("call b_events_filtered_get(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [userInfo.id, ...procedureParams]);
     }
+
+    console.log(data);
 
     return res.status(200).json(eventsFormatter(data));
   } catch (err) {

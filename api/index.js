@@ -1,6 +1,7 @@
 //# -- API END POINTS ROUTES -- //
 import eventsRoutes from "./routes/events.js";
 import authRoutes from "./routes/auth.js";
+import paymentsRoutes from "./routes/payments.js";
 
 //# -- IMPORTS -- //
 import express from "express";
@@ -40,6 +41,7 @@ app.use(cors(corsOptions));
 //# -- Main Routes -- //
 app.use("/events", eventsRoutes);
 app.use("/auth", authRoutes);
+app.use("/payments", paymentsRoutes);
 
 app.use("/", (req, res) => {
   res.status(200).send("<h1>Welcome to the NEW PREVIATE API</h1>");

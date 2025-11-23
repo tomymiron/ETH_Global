@@ -26,8 +26,8 @@ const itemVariants = {
 export default function Links() {
 
     const mainItems = [
-      { label: "PANEL PRODUCTOR", href: "/org/panel" },
-      { label: "SUMAR MI EVENTO", href: "https://api.whatsapp.com/send/?phone=5491134808000&text=Hola+STAFF%21+Quiero+sumar+mi+evento.&type=phone_number&app_absent=0" },
+      { label: "SIGN IN ACCOUNT", href: "/user/login" },
+      { label: "UPLOAD MY EVENT", href: "https://api.whatsapp.com/send/?phone=5491134808000&text=Hola+STAFF%21+Quiero+sumar+mi+evento.&type=phone_number&app_absent=0" },
     ];
 
     const footerItems = [

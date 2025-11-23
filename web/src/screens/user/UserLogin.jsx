@@ -32,7 +32,7 @@ function UserLogin() {
       toast.success("Ingreso exitoso", { theme: "colored", position: "bottom-right" });
       await setLogin(res.data.user, res.data.token);
       setTimeout(() => {
-        navigate("/user/profile");
+        navigate("/events");
       }, 350);
     }catch(err){
       const errorData = err.response?.data;

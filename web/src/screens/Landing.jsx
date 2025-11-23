@@ -51,6 +51,10 @@ export function Landing() {
             <motion.button id="producerPanelButton" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} whileTap={{ scale: 0.85, transition: { duration: 0.1 } }} onClick={() => window.location.href = "/org/panel"} >
               <p>PANEL<br/>PRODUCTOR</p>
             </motion.button> */}
+            <motion.button id="producerPanelButton" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} whileTap={{ scale: 0.85, transition: { duration: 0.1 } }} onClick={() => window.location.href = "/user/login"} >
+              <p>INICIAR SESION</p>
+            </motion.button>
+
 
             <motion.button id="addEventButton" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} whileTap={{ scale: 0.85, transition: { duration: 0.1 } }} onClick={() => sendWhatsapp("Hola STAFF! Quiero sumar mi evento.")} >
               <p>SUMAR MI<br/>EVENTO</p>

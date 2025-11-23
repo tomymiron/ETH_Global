@@ -1,0 +1,276 @@
+@use "../../theme.scss" as theme;
+
+#Success {
+  background-color: theme.$green_01;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .success-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  // Header (Status Bar)
+  .success-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 18px;
+    background-color: theme.$black_01;
+    position: relative;
+    z-index: 10;
+
+    .success-header-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      .success-header-calendar {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: theme.$white_01;
+      }
+    }
+
+    .success-header-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+
+      .success-header-time {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: theme.$white_01;
+      }
+    }
+
+    .success-header-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+
+      .success-status-icons {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+
+  // Top Bar with Back Button and Title
+  .success-top-bar {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: theme.$black_01;
+    position: relative;
+    z-index: 10;
+
+    .success-back-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: theme.$purple_01;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-right: 12px;
+
+      &:hover {
+        transform: scale(1.05);
+        background-color: #a584f7;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .success-title {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: theme.$white_01;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex: 1;
+      text-align: center;
+      padding-right: 52px; // Compensar el botón de atrás
+    }
+  }
+
+  // Main Content
+  .success-content {
+    background-color: theme.$green_01;
+    min-height: calc(100vh - 120px);
+    padding: 40px 18px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+  }
+
+  // Icons Circle
+  .success-icons-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .success-icon {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: theme.$white_01;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      &.success-icon-bell {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.success-icon-map {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      &.success-icon-ticket {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.success-icon-calendar {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      &.success-icon-check {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+        box-shadow: none;
+        z-index: 2;
+      }
+    }
+  }
+
+  // Success Text
+  .success-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+
+    .success-main-text {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+      color: theme.$black_01;
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .success-subtext {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: theme.$black_01;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  // View Ticket Button
+  .success-view-ticket-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 32px;
+    border-radius: 16px;
+    background-color: theme.$black_01;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: theme.$white_01;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 16px;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 375px) {
+  #Success {
+    .success-icons-circle {
+      width: 180px;
+      height: 180px;
+
+      .success-icon {
+        width: 40px;
+        height: 40px;
+
+        &.success-icon-check {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+
+    .success-text {
+      .success-main-text {
+        font-size: 28px;
+      }
+
+      .success-subtext {
+        font-size: 14px;
+      }
+    }
+
+    .success-view-ticket-button {
+      font-size: 16px;
+      padding: 16px 24px;
+    }
+  }
+}
+

@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "r
 import { AuthProvider, useAuth as useAuthUser } from "./contexts/AuthContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RegisterProvider } from "./contexts/RegisterContext";
-import { Landing, Privacy, Terms } from "./screens";
+import { Events, Event, Landing, Privacy, Terms, Success } from "./screens";
 import { ToastContainer } from "material-react-toastify";
+import "material-react-toastify/dist/ReactToastify.css";
 import { AnimatePresence } from "framer-motion";
+import { FilterProvider } from "./contexts/FilterContext";
 
 const queryClient = new QueryClient();
 
@@ -13,12 +15,14 @@ export default function App() {
   return (
         <QueryClientProvider client={queryClient}>
               <AuthProvider>
+                <FilterProvider>
                 <RegisterProvider>
                   <ToastContainer />
                   <Router>
                     <AppRoutes />
                   </Router>
                 </RegisterProvider>
+                </FilterProvider>
               </AuthProvider>
         </QueryClientProvider>
     );
@@ -38,17 +42,21 @@ function AppRoutes() {
     const location = useLocation();
 
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
 
-                <Route path="/" element={<Landing />} />
-                <Route path="/user/*" element={<UserRoutes />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/user/*" element={<UserRoutes />} />
 
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
 
-            </Routes>
-        </AnimatePresence>
+          <Route path="/events" element={<Events />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/success" element={<Success />} />
+
+        </Routes>
+      </AnimatePresence>
     );
 }
 
@@ -69,5 +77,5 @@ function HandlerUserLogin({ component }) {
     return <div>Cargando...</div>;
   }
   
-  return authState.authenticated && authState.user ? <Navigate to="/user/profile" /> : component;
+  return authState.authenticated && authState.user ? <Navigate to="/events" /> : component;
 }
